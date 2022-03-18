@@ -13,7 +13,7 @@ export class MyApp {
 
   rootPage: string = 'HomePage';
 
-  pages: Array<{title: string, component: string}>;
+  pages: Array<{title: string, component: string, icon: string}>;
 
   constructor(
     public platform: Platform,
@@ -23,21 +23,17 @@ export class MyApp {
   ) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Perfil', component: 'ProfilePage' },
-      { title: 'Categorias', component: 'CategoriasPage' },
-      { title: 'Sobre o Sistema', component: 'InformacoesPage' },
-      { title: 'Sair', component: ''},
-     // { title: 'Carrinho', component: 'CartPage'},
+      { title: 'Perfil', component: 'ProfilePage', icon: 'person' },
+      { title: 'Categorias', component: 'CategoriasPage', icon: 'logo-buffer'},
+      { title: 'Sobre o Sistema', component: 'InformacoesPage', icon: 'information-circle'  },
+      { title: 'Sair', component: '', icon: 'close-circle' },
     ];
 
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

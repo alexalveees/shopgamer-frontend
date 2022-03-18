@@ -10,19 +10,20 @@ export class InformacoesService {
     constructor(public http: HttpClient) {
     }
 
-    findAllCategorias() : Observable<informacoesDto>  {
-        return this.http.get<informacoesDto>(`${API_CONFIG.baseUrl}/categorias/total`);
-    }
+    findAllCategorias() : Promise<informacoesDto>  {
+      return this.http.get<informacoesDto>(`${API_CONFIG.baseUrl}/categorias/total`).toPromise();
+  }
 
-    findAllProdutos() : Observable<informacoesDto>  {
-        return this.http.get<informacoesDto>(`${API_CONFIG.baseUrl}/produtos/total`);
-    }
+  findAllProdutos() : Promise<informacoesDto>  {
+    return this.http.get<informacoesDto>(`${API_CONFIG.baseUrl}/produtos/total`).toPromise();
+}
 
-    findAllClientes() : Observable<informacoesDto>  {
-        return this.http.get<informacoesDto>(`${API_CONFIG.baseUrl}/clientes/total`);
-    }
+findAllClientes() : Promise<informacoesDto>  {
+  return this.http.get<informacoesDto>(`${API_CONFIG.baseUrl}/clientes/total`).toPromise();
+}
 
-    findAllPedidos() : Observable<informacoesDto>  {
-        return this.http.get<informacoesDto>(`${API_CONFIG.baseUrl}/pedidos/total`);
-    }
+findAllPedidos() : Promise<informacoesDto>  {
+  return this.http.get<informacoesDto>(`${API_CONFIG.baseUrl}/pedidos/total`).toPromise();
+}
+
 }
