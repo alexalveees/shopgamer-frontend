@@ -1,7 +1,7 @@
 page-produto-detail {
 
     .but {
-        background: #960A0A;  
+        background: #960A0A;
     }
 
     .but1 {
@@ -17,18 +17,27 @@ page-produto-detail {
         font-weight: normal;
     }
 
-    img {   
+    img {
         max-width: 70% ;
-        max-height: 70% ;             
+        max-height: 70% ;
     }
 
     img {
         @media (min-width: 500px) {
              max-width: 17% ;
              max-height: 17% ;
-                
+
         }
     }
 
-    
+    .infoProd{
+      display: flex;
+      flex-direction: column;
+  }
+
+  .imgProd, .textProd{
+      align-self: center;
+  }
+
+
 }

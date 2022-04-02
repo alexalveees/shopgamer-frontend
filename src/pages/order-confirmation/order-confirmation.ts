@@ -22,7 +22,7 @@ export class OrderConfirmationPage {
   codpedido: string;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     public clienteService: ClienteService,
     public cartService: CartService,
@@ -51,10 +51,14 @@ export class OrderConfirmationPage {
 
   total() : number {
     return this.cartService.total();
-  } 
+  }
 
   back() {
     this.navCtrl.setRoot('CartPage');
+  }
+
+  home() {
+    this.navCtrl.setRoot('CategoriasPage');
   }
 
   checkout() {

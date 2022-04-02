@@ -1,4 +1,4 @@
-<ion-content >
+<ion-content  class="cor">
   <div class="header">
     <div class="logoName"> <span class="logoName2">ShopGamer</span></div>
   </div>
@@ -6,30 +6,30 @@
     <h3>JA É CADASTRADO?</h3>
     <p>Entre com seus dados de login e senha.</p>
   </div>
-  
+
 
   <form>
-    <ion-item padding>
+    <ion-item padding class="cor">
       <ion-label stacked>Email</ion-label>
       <ion-input  [(ngModel)]="creds.email" color="danger" name="email" type="text"></ion-input>
     </ion-item>
-    <ion-item padding>
+    <ion-item padding class="cor">
       <ion-label stacked>Senha</ion-label>
       <ion-input [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>
     </ion-item >
     <div class="center">
-    <button (click)="login()">Entrar</button>
+    <button (click)="login()"  class="tam">Entrar</button>
   </div>
   </form>
-  <div class="center">
+  <!--<div class="center">
     <button (click)="login()">Gmail</button>
     <p>Acesse sua conta através de suas redes sociais.</p>
-  </div>
+  </div> -->
   <div class="cad">
     <h3>DESEJA FAZER UM CADASTRADO?</h3>
     <p>Ainda não é cadastrado no site?</p>
   </div>
   <div class="center">
-  <button (click)="signup()">Registrar</button>
+  <button (click)="signup()" class="tam">Registrar</button>
 </div>
 </ion-content>

@@ -4,6 +4,11 @@ page-signup {
         color: red;
     }
 
+
+    .cor{
+      background: #ffffff;
+    }
+
     .f {
         font-size: 80%;
     }
@@ -20,7 +25,7 @@ page-signup {
     .but{
         height: 40px;
         background: #960A0A;
-        border: 1px solid rgba(92, 1, 1, 0.2); 
+        border: 1px solid rgba(92, 1, 1, 0.2);
         box-sizing: border-box;
         border-radius: 10px;
         font-size: 19px;
@@ -29,5 +34,7 @@ page-signup {
         font-style: normal;
         font-weight: normal;
     }
+
+
 
 }

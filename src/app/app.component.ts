@@ -26,7 +26,7 @@ export class MyApp {
     this.pages = [
       { title: 'Perfil', component: 'ProfilePage', icon: 'person' },
       { title: 'Categorias', component: 'CategoriasPage', icon: 'logo-buffer'},
-      { title: 'Sobre o Sistema', component: 'InformacoesPage', icon: 'information-circle'  },
+      { title: 'Relatório', component: 'InformacoesPage', icon: 'information-circle'  },
       { title: 'Sair', component: '', icon: 'close-circle' },
     ];
 

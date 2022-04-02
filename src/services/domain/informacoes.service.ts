@@ -26,4 +26,12 @@ findAllPedidos() : Promise<informacoesDto>  {
   return this.http.get<informacoesDto>(`${API_CONFIG.baseUrl}/pedidos/total`).toPromise();
 }
 
+findAllCidades() : Promise<informacoesDto>  {
+  return this.http.get<informacoesDto>(`${API_CONFIG.baseUrl}/estados/cidades/total`).toPromise();
+}
+
+findAllEstados() : Promise<informacoesDto>  {
+  return this.http.get<informacoesDto>(`${API_CONFIG.baseUrl}/estados/total`).toPromise();
+}
+
 }

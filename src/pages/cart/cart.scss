@@ -2,11 +2,11 @@ page-cart {
     .nolinebreak {
         float: left;
         padding-right: 10px;
-        color: #960A0A; 
+        color: #960A0A;
     }
 
     .icone {
-        color: #960A0A;  
+        color: #960A0A;
     }
 
     .menu{
@@ -39,5 +39,9 @@ page-cart {
         font-weight: normal;
     }
 
-    
+    .list{
+      white-space: pre-line;
+    }
+
+
 }

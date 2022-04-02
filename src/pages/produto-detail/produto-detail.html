@@ -11,9 +11,9 @@
   <ion-fab top right edge>
     <button class="but" navPush="CartPage" ion-fab mini><ion-icon name="cart"></ion-icon></button>
   </ion-fab>
-  <ion-card>
-    <img [src]="item?.imageUrl || 'assets/imgs/prod.jpg'"/>
-    <ion-card-content>
+  <ion-card class="infoProd">
+    <img class="imgProd" [src]="item?.imageUrl || 'assets/imgs/prod.jpg'"/>
+    <ion-card-content class="textProd">
       <ion-card-title>
         {{item?.nome}}
         </ion-card-title>

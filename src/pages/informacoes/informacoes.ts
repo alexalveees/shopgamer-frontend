@@ -14,8 +14,11 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 export class InformacoesPage implements OnInit {
 
   @ViewChild('barCanvas') barCanvas;
+  @ViewChild('barCanvas1') barCanvas1;
+
 
   barChart: any;
+  barChart1: any;
 
   constructor(
     public navCtrl: NavController,
@@ -23,8 +26,9 @@ export class InformacoesPage implements OnInit {
     public informacoesService: InformacoesService) {
   }
 
-  ngOnInit(): void {
-    this.barChart = this.getBarChart();
+  async ngOnInit() {
+    this.barChart = await this.getBarChart()[0];
+    this.barChart1 = await this.getBarChart()[1];
   }
 
 
@@ -44,13 +48,15 @@ export class InformacoesPage implements OnInit {
       this.informacoesService.findAllPedidos(),
       this.informacoesService.findAllProdutos(),
       this.informacoesService.findAllCategorias(),
+      this.informacoesService.findAllCidades(),
+      this.informacoesService.findAllEstados(),
     ])
       .then( resp => {
 
-        return {
+        return [{
           labels: ['Clientes', 'Pedidos', 'Produtos', 'Categorias'],
           datasets: [{
-            label: 'Registrado no sistema',
+            label: 'Quantidade registrada no sistema',
             data: [resp[0],resp[1],resp[2],resp[3]],
             backgroundColor: [
               'rgb(255, 0, 0)',
@@ -60,9 +66,22 @@ export class InformacoesPage implements OnInit {
             ],
             borderWidth: 1,
           }]
-        }
+        },
+      {
+        labels: ['Cidades', 'Estados'],
+          datasets: [{
+            label: 'Quantidade registrada no sistema',
+            data: [resp[4],resp[5]],
+            backgroundColor: [
+              'rgb(458, 70, 0)',
+              'rgb(44, 105, 0)'
+            ],
+            borderWidth: 1,
+          }]
+      }]
+
       })
-      .catch(console.log) 
+      .catch(console.log)
 
     const options = {
       scales: {
@@ -74,7 +93,10 @@ export class InformacoesPage implements OnInit {
       }
     }
 
-    return this.getChart(this.barCanvas.nativeElement, 'bar', data, options);
+    const dadosTabela=[this.getChart(this.barCanvas.nativeElement, 'bar', data[0], options),
+    this.getChart(this.barCanvas1.nativeElement, 'bar', data[1], options)];
+    return dadosTabela;
+
   }
 
 }
